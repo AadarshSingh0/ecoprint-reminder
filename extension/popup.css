@@ -1,0 +1,168 @@
+body {
+  width: 350px;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f8f4;
+  color: #16251c;
+}
+.card {
+  padding: 16px;
+}
+h1 {
+  margin: 0;
+  font-size: 24px;
+}
+.subtitle {
+  margin: 4px 0 14px;
+  color: #52635a;
+}
+.stats {
+  display: grid;
+  gap: 10px;
+}
+.stats div, .assumption, .last, .pending {
+  background: white;
+  border: 1px solid #dfe8df;
+  border-radius: 12px;
+  padding: 12px;
+}
+.pending {
+  margin-bottom: 12px;
+  border-color: #b9d9c0;
+  background: #fbfffb;
+}
+.hidden {
+  display: none;
+}
+.label {
+  display: block;
+  font-size: 12px;
+  color: #637066;
+  margin-bottom: 4px;
+}
+strong {
+  font-size: 22px;
+}
+.assumption, .last {
+  margin-top: 12px;
+}
+.assumption label, .pending label {
+  display: block;
+  font-size: 12px;
+  color: #637066;
+  margin-bottom: 6px;
+}
+input {
+  width: calc(100% - 18px);
+  padding: 8px;
+  border: 1px solid #cbd8cc;
+  border-radius: 8px;
+}
+button {
+  margin-top: 8px;
+  padding: 9px 10px;
+  border: 0;
+  border-radius: 9px;
+  background: #1d6b43;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+.buttons {
+  display: flex;
+  gap: 8px;
+}
+.buttons button {
+  flex: 1;
+}
+.danger {
+  background: #8d2f2f;
+}
+h2 {
+  font-size: 14px;
+  margin: 0 0 6px;
+}
+#lastEvent, #pendingTitle {
+  margin: 0 0 8px;
+  font-size: 12px;
+  color: #52635a;
+  word-break: break-word;
+}
+.smallText {
+  margin: 8px 0 0;
+  font-size: 12px;
+  color: #52635a;
+}
+.note {
+  font-size: 11px;
+  color: #6a766e;
+  line-height: 1.35;
+}
+
+.chop {
+  margin-top: 12px;
+  background: white;
+  border: 1px solid #dfe8df;
+  border-radius: 12px;
+  padding: 12px;
+}
+.miniScene {
+  position: relative;
+  height: 90px;
+  overflow: hidden;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #e7f5ff 0%, #f4fbf6 65%, #eaf6e8 65%, #eaf6e8 100%);
+  margin-top: 8px;
+}
+.miniGround {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+  height: 3px;
+  background: #7c5634;
+}
+.miniJack {
+  position: absolute;
+  left: 24px;
+  bottom: 12px;
+  font-size: 30px;
+}
+.miniJack .axe {
+  position: absolute;
+  left: 18px;
+  top: -3px;
+  font-size: 22px;
+  transform-origin: left bottom;
+}
+.miniTree {
+  position: absolute;
+  right: 26px;
+  bottom: 12px;
+  font-size: 42px;
+  transform-origin: 25% 82%;
+}
+.playing .miniJack .axe {
+  animation: popupAxeSwing 1s ease forwards;
+}
+.playing .miniTree {
+  animation: popupTreeFall 1.1s ease forwards;
+  animation-delay: 0.45s;
+}
+@keyframes popupAxeSwing {
+  0%, 30% { transform: rotate(-15deg); }
+  60% { transform: rotate(45deg); }
+  100% { transform: rotate(0deg); }
+}
+@keyframes popupTreeFall {
+  0%, 20% { transform: rotate(0deg); }
+  100% { transform: rotate(85deg) translate(8px, 8px); }
+}
+
+.savedStats {
+  margin-top: 10px;
+}
+.savedStats div {
+  border-color: #cfe6d4;
+  background: #fbfffb;
+}

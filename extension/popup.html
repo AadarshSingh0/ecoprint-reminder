@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>EcoPrint Reminder</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <main class="card">
+      <h1>🌱 EcoPrint</h1>
+      <p class="subtitle">Your confirmed print footprint</p>
+
+      <section id="pendingSection" class="pending hidden">
+        <h2>Pending print</h2>
+        <p id="pendingTitle">A print preview was detected.</p>
+        <label for="pendingPages">Correct page count</label>
+        <input id="pendingPages" type="number" min="1" step="1" />
+        <p id="pendingTrees" class="smallText"></p>
+        <div class="buttons">
+          <button id="confirmPending">Count it</button>
+          <button id="discardPending" class="danger">Ignore</button>
+        </div>
+      </section>
+
+      <section class="stats">
+        <div>
+          <span class="label">Pages counted</span>
+          <strong id="totalPages">0</strong>
+        </div>
+        <div>
+          <span class="label">Estimated trees used</span>
+          <strong id="totalTrees">0</strong>
+        </div>
+        <div>
+          <span class="label">Confirmed prints</span>
+          <strong id="printEvents">0</strong>
+        </div>
+      </section>
+
+      <section class="stats savedStats">
+        <div>
+          <span class="label">Prints avoided</span>
+          <strong id="avoidedEvents">0</strong>
+        </div>
+        <div>
+          <span class="label">Pages saved</span>
+          <strong id="avoidedPages">0</strong>
+        </div>
+        <div>
+          <span class="label">Estimated trees saved</span>
+          <strong id="avoidedTrees">0</strong>
+        </div>
+      </section>
+
+      <section class="assumption">
+        <label for="pagesPerTree">Pages per tree assumption</label>
+        <input id="pagesPerTree" type="number" min="1" step="1" />
+        <button id="saveAssumption">Save assumption</button>
+      </section>
+
+      <section class="last">
+        <h2>Last confirmed print</h2>
+        <p id="lastEvent">No print counted yet.</p>
+      </section>
+
+      <section class="buttons">
+        <button id="undoLast">Undo last count</button>
+        <button id="resetAll" class="danger">Reset all</button>
+      </section>
+
+      <section id="chopAnimationCard" class="chop hidden">
+        <h2>Last action</h2>
+        <div class="miniScene">
+          <div class="miniGround"></div>
+          <div class="miniJack">🧍<span class="axe">🪓</span></div>
+          <div id="miniTree" class="miniTree">🌳</div>
+        </div>
+        <p id="chopMessage" class="smallText">A tree was chopped in the animation.</p>
+      </section>
+
+      <section class="last">
+        <h2>Last avoided print</h2>
+        <p id="lastAvoidedEvent">No avoided print counted yet.</p>
+      </section>
+
+      <p class="note">EcoPrint estimates the page count, then asks you to confirm, correct, or avoid it. PDFs opened in Chrome's built-in viewer may not be detected yet.</p>
+    </main>
+    <script src="popup.js"></script>
+  </body>
+</html>

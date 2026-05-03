@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "EcoPrint Reminder",
+  "version": "0.5.2",
+  "description": "v5 with eco-tips, avoided-print stats, PDF note, and the final production EcoPrint animation.",
+  "permissions": [
+    "storage"
+  ],
+  "action": {
+    "default_title": "EcoPrint Reminder",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
